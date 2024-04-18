@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EntertainmentProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EntertainmentProject.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, button, h1, .navbar {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f8d7da; /* Light pink background */
+        }
+
+        .btn-pink, .navbar {
+            background-color: #d6336c; /* Dark pink for buttons and navbar */
+            border-color: #d6336c;
+            color: white;
+        }
+
+            .btn-pink:hover {
+                background-color: #c82353;
+                border-color: #c82353;
+            }
+
+        h1 {
+            color: #d6336c; /* Dark pink to match the theme */
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white;
+        }
+
+            .navbar-light .navbar-nav .nav-link:hover {
+                color: #ffecef;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="background-color: #d6336c;">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">EntertainmentProject</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy" style="color: white;">Entertainers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - EntertainmentProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Entertainers</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

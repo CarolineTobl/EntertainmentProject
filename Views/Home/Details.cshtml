@@ -1,0 +1,54 @@
+﻿@model EntertainmentProject.Models.Entertainer
+
+@{
+    ViewData["Title"] = "Entertainer Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.EntertainerId</dd>
+
+    <dt class="col-sm-2">Stage Name</dt>
+    <dd class="col-sm-10">@Model.EntStageName</dd>
+
+    <dt class="col-sm-2">Social Security Number</dt>
+    <dd class="col-sm-10">@Model.EntSsn</dd>
+
+    <dt class="col-sm-2">Street Address</dt>
+    <dd class="col-sm-10">@Model.EntStreetAddress</dd>
+
+    <dt class="col-sm-2">City</dt>
+    <dd class="col-sm-10">@Model.EntCity</dd>
+
+    <dt class="col-sm-2">State</dt>
+    <dd class="col-sm-10">@Model.EntState</dd>
+
+    <dt class="col-sm-2">Zip Code</dt>
+    <dd class="col-sm-10">@Model.EntZipCode</dd>
+
+    <dt class="col-sm-2">Phone Number</dt>
+    <dd class="col-sm-10">@Model.EntPhoneNumber</dd>
+
+    <dt class="col-sm-2">Web Page</dt>
+    <dd class="col-sm-10">
+        @if (!string.IsNullOrEmpty(Model.EntWebPage))
+        {
+            <a href="@Model.EntWebPage" target="_blank">@Model.EntWebPage</a>
+        }
+    </dd>
+
+    <dt class="col-sm-2">Email Address</dt>
+    <dd class="col-sm-10">@Model.EntEmailAddress</dd>
+
+    <dt class="col-sm-2">Date Entered</dt>
+    <dd class="col-sm-10">@Model.DateEntered?.ToString("MM/dd/yyyy")</dd>
+</dl>
+
+<a asp-action="Privacy" class="btn btn-secondary">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.EntertainerId" class="btn btn-primary">Edit</a>
+<form asp-action="Delete" asp-route-id="@Model.EntertainerId" method="post" class="mt-3">
+    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this entertainer?');">Delete</button>
+</form>
+

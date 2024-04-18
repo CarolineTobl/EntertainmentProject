@@ -1,0 +1,66 @@
+﻿@model EntertainmentProject.Models.Entertainer
+
+@{
+    ViewData["Title"] = "Edit Entertainer";
+}
+
+<h2>@ViewData["Title"]]</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="EntertainerId" />
+
+    <div class="form-group">
+        <label asp-for="EntStageName">Stage Name</label>
+        <input asp-for="EntStageName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntSsn">Social Security Number</label>
+        <input asp-for="EntSsn" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntStreetAddress">Street Address</label>
+        <input asp-for="EntStreetAddress" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntCity">City</label>
+        <input asp-for="EntCity" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntState">State</label>
+        <input asp-for="EntState" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntZipCode">Zip Code</label>
+        <input asp-for="EntZipCode" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntPhoneNumber">Phone Number</label>
+        <input asp-for="EntPhoneNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntWebPage">Web Page</label>
+        <input asp-for="EntWebPage" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EntEmailAddress">Email Address</label>
+        <input asp-for="EntEmailAddress" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateEntered">Date Entered</label>
+        <input asp-for="DateEntered" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+        <a asp-action="Details" asp-route-id="@Model.EntertainerId" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

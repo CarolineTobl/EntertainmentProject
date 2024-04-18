@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EntertainmentProject.Models.Entertainer>
+
+@{
+    ViewData["Title"] = "Entertainers";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entertainer in Model)
+        {
+            <tr>
+                <td>@entertainer.EntStageName</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@entertainer.EntertainerId">More Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Place this at the bottom of the Index.cshtml file -->
+<a class="btn btn-primary" href="@Url.Action("AddEntertainer", "Home")">Add New Entertainer</a>
+<br />
+<br />
+<br />
+
+
+
